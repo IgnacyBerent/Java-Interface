@@ -14,14 +14,14 @@ public class WeatherData implements Subject{
     private Thread measurmentThread;
     private long updateInterval = 1000;
 
-    public void startMeasurment(){
+    public void startMeasurement(){
         if(!serverOn){
             startServer();
             isRunning = true;
         }
     }
 
-    public void stopMeasurment(){
+    public void stopMeasurement(){
         if(isRunning){
             isRunning = false;
         }
@@ -33,7 +33,7 @@ public class WeatherData implements Subject{
             measurmentThread = new Thread(()->{
                 while(!Thread.currentThread().isInterrupted()){
                     if(isRunning){
-                        setMeasurmentData();
+                        setMeasurementData();
                         notifyObservers();
 
                         try{
@@ -56,7 +56,7 @@ public class WeatherData implements Subject{
         }
     }
 
-    public void setMeasurmentData(){
+    public void setMeasurementData(){
         temperature = random.nextFloat(-10, 30);
         humidity = random.nextFloat(0, 100);
         pressure = random.nextFloat(980, 1030);

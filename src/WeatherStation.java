@@ -3,19 +3,17 @@ public class WeatherStation {
         WeatherData weatherData = new WeatherData();
 
         CurrentWeather currentWeather = new CurrentWeather();
-        WeatherStatistics wheatherStatistics = new WeatherStatistics();
+        WeatherStatistics weatherStatistics = new WeatherStatistics();
 
         weatherData.registerObserver(currentWeather);
-        weatherData.registerObserver(wheatherStatistics);
-        weatherData.startMeasurment();
+        weatherData.registerObserver(weatherStatistics);
+        weatherData.startMeasurement();
 
         while(true){
             //currentWeather.display();
-            wheatherStatistics.display();
+            weatherStatistics.display();
 
         }
-
-
 
         //weatherData.setMeasurmentData();
         //weatherData.notifyObservers();

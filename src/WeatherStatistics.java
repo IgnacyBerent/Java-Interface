@@ -8,7 +8,7 @@ public class WeatherStatistics implements Observer, Display{
 
     @Override
     public void display() {
-        System.out.println(" T average= " + avarage(temperatureList));
+        System.out.println(" T average= " + average(temperatureList));
     }
 
     @Override
@@ -18,7 +18,7 @@ public class WeatherStatistics implements Observer, Display{
         pressureList.add(pressure);
         display();
     }
-    private float avarage(List<Float> list){
+    private float average(List<Float> list){
         float sum = 0;
         if (list.size() == 1) {
             return list.get(0);
